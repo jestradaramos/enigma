@@ -22,11 +22,26 @@ class Machine():
 		self.count1 = 0
 		self.count2 = 0
 
+	def select_cog(self, wheel, rotor):
+		fileName = open("rotor" + str(rotor) +  ".txt")
 
+		if (wheel == 1):	
+			self.wheel1 = fileName.read()
+		elif (wheel == 2):
+			self.wheel2 = fileName.read()
+		elif (wheel == 3):
+			self.wheel3 = fileName.read()
+		else: 
+			print("Invalid Rotor")
+
+			
 	def set_up(self, set1, set2, set3):
 		self.wheel1.set(set1)
 		self.wheel2.set(set2)
 		self.wheel3.set(set3)
+
+	def set_plug(self,plug):
+		self.board = Plugboard(plug)
 
 	def input(self, letter):
 		string = letter.upper()
