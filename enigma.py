@@ -13,8 +13,8 @@ class PlugBoard():
 		self.list = {}
 		split = settings.split(',')
 		for x in split:
-			self.list.update({x[0] : x[1]})
-			self.list.update({x[1] : x[0]})
+			self.list.update({ord(x[0]) - 65 : ord(x[1]) - 65})
+			self.list.update({ord(x[1]) - 65 : ord(x[0]) - 65})
 		
 
 	def go(self, value):
@@ -22,10 +22,10 @@ class PlugBoard():
 	
 
 # These are just testing the functionality of the cogwheel
-x = PlugBoard("A1,B2,C3")
+x = PlugBoard("AW,BE,CT")
 print (x.list)
-print (x.go('A'))
-print (x.go('2'))
+print (x.go(0))
+print (x.go(1))
 
 class CogWheel():
 	def __init__(self,discNum ,settings):
@@ -38,8 +38,7 @@ class CogWheel():
 		for x in split:
 			self.forward.append(ord(x[0]) - 65)
 			self.backward.append(ord(x[1]) - 65)
-		self.ind = 0
-		self.discNum = discNum
+		self.index = 0
 
 	def goForward(self, ind):
 		value = self.forward[ind]
@@ -61,6 +60,7 @@ class CogWheel():
 
 		self.forward = tempF
 		self.backward = tempB
+		self.index += 1
 
 	
 	def set(self, setting):
@@ -77,6 +77,7 @@ class CogWheel():
 
 		self.forward = tempF
 		self.backward = tempB
+		self.index = setting
 		
 cog = CogWheel(1,"AC,BD,CA,DB")
 for x in range(0,2):	
@@ -99,8 +100,8 @@ class Reflector():
 		self.list = {}
 		split = settings.split(',')
 		for x in split:
-			self.list.update({x[0] : x[1]})
-			self.list.update({x[1] : x[0]})
+			self.list.update({ord(x[0]) - 65 : ord(x[1]) - 65})
+			self.list.update({ord(x[1]) - 65 : ord(x[0]) - 65})
 		
 
 	def go(self, value):
