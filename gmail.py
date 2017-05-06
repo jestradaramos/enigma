@@ -13,6 +13,3 @@ class email():
 		self.server.quit()
 
 
-
-x = email()
-x.send("6179906639@vtext.com", "test")
