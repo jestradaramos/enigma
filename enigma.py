@@ -20,13 +20,6 @@ class PlugBoard():
 	def go(self, value):
 		return self.list[value]
 	
-
-# These are just testing the functionality of the cogwheel
-x = PlugBoard("AW,BE,CT")
-print (x.list)
-print (x.go(0))
-print (x.go(1))
-
 class CogWheel():
 	def __init__(self,discNum ,settings):
 		# Here we expect a list of pair of letter, A-Z
@@ -79,18 +72,6 @@ class CogWheel():
 		self.backward = tempB
 		self.index = setting
 		
-cog = CogWheel(1,"AC,BD,CA,DB")
-for x in range(0,2):	
-	cog.rotate()
-	print (cog.forward)
-
-cog.set(1)
-print (cog.forward)
-print (cog.backward)
-print (cog.goForward(2))
-
-print (cog.goBackward(2))
-
 # It is the same as the plugboard
 
 class Reflector():

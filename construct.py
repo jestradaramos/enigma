@@ -78,20 +78,3 @@ class Machine():
 		return final
 
 
-print ("\n Big test")
-x = Machine(1,2,3)
-print (x.wheel1.backward)
-print (x.wheel2.backward)
-print (x.wheel3.backward)
-print (x.reflect.list)
-print (x.board.list)
-x.set_up(3,13,24)
-print (x.input('A'))
-print (x.input('A'))
-print (x.input('A'))
-print (x.input('A'))
-print (x.input('A'))
-print (x.input('A'))
-print (x.input('A'))
-print (x.input('A'))
-
